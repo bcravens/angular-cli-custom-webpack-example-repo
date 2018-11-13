@@ -13,9 +13,9 @@ var path = require("path");
 var app = express();
 // var dir = "./";
 app.enable('trust proxy');
-app.use('/dist', express.static(path.resolve(process.cwd(), 'dist/main.js')));
+app.use('/dist', express.static(path.resolve(process.cwd(), 'dist/client.js')));
 app.get('/@reviq/clients', function (req, res) {
-    res.sendFile(path.resolve(process.cwd(), 'dist/main.js'));
+    res.sendFile(path.resolve(process.cwd(), 'dist/client.js'));
 });
 // console.log(process.cwd())
 // const indexHtml = readFileSync(process.cwd() + '/dist/index.html', 'utf-8').toString();
@@ -28,7 +28,7 @@ app.get('/@reviq/clients', function (req, res) {
 // }));
 app.route('*').get(function (req, res) {
     console.log("******* request *******");
-    res.sendFile(path.resolve(process.cwd(), 'dist/main.js'));
+    res.sendFile(path.resolve(process.cwd(), 'dist/client.js'));
     // renderModuleFactory(AppServerModuleNgFactory, {
     //     document: indexHtml,
     //     url: req.url
