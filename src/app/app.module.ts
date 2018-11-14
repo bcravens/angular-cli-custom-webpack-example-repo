@@ -26,7 +26,7 @@ import { AppShellRenderDirective } from './directives/app-shell-render.directive
   // entryComponents:[AppComponent]
 })
 
-export class AppModule { 
+export class AppModule {
   @Inject(PLATFORM_ID) private platformId
   constructor(private injector: Injector) { }
 

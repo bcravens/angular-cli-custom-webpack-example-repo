@@ -1,11 +1,11 @@
 import 'zone.js/dist/zone-node';
 import 'reflect-metadata';
-// import { renderModuleFactory } from '@angular/platform-server';
 import * as express from 'express';
-// import { readFileSync } from 'fs';
-// import { enableProdMode } from '@angular/core';
 import * as path from 'path';
 
+// import { renderModuleFactory } from '@angular/platform-server';
+// import { readFileSync } from 'fs';
+// import { enableProdMode } from '@angular/core';
 // const { AppServerModuleNgFactory } = require('../dist-server/main');
 // const { AppServerModuleNgFactory } = require(process.cwd() + '/dist-server/main');
 
@@ -15,9 +15,9 @@ const app = express();
 
 // var dir = "./";
 app.enable('trust proxy');
-app.use('/dist', express.static(path.resolve(process.cwd(), 'dist/main.js')));
+app.use('/dist', express.static(path.resolve(process.cwd(), 'dist/clients-lib/bundles/clients-lib.umd.js')));
 app.get('/@reviq/clients', (req, res) => {
-    res.sendFile(path.resolve(process.cwd(), 'dist/main.js'));
+    res.sendFile(path.resolve(process.cwd(), 'dist/clients-lib/bundles/clients-lib.umd.js'));
 });
 
 // console.log(process.cwd())
@@ -36,7 +36,7 @@ app.route('*').get((req, res) => {
 
     console.log("******* request *******")
 
-    res.sendFile(path.resolve(process.cwd(), 'dist/main.js'));
+    res.sendFile(path.resolve(process.cwd(), 'dist/clients-lib/bundles/clients-lib.umd.js'));
 
     // renderModuleFactory(AppServerModuleNgFactory, {
     //     document: indexHtml,
