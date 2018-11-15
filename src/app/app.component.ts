@@ -6,13 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent implements OnInit {
-  title = 'website-cli';
+  title = 'clients';
 
   ngOnInit() {
-    console.log("hi")
+    console.log("clients app component")
   }
 
-  onClick() {
-    console.log("click EDITTTT")
-  }
 }

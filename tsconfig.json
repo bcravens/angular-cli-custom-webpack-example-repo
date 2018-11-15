@@ -15,15 +15,7 @@
     "lib": [
       "es2017",
       "dom"
-    ],
-    "paths": {
-      "clients-lib": [
-        "dist/clients-lib"
-      ],
-      "clients-lib/*": [
-        "dist/clients-lib/*"
-      ]
-    }
+    ]
   },
   "exclude": [
     "node_modules",

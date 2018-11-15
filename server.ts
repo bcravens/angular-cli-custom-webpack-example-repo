@@ -15,10 +15,10 @@ const app = express();
 
 // var dir = "./";
 app.enable('trust proxy');
-app.use('/dist', express.static(path.resolve(process.cwd(), 'dist/clients-lib/bundles/clients-lib.umd.js')));
-app.get('/@reviq/clients', (req, res) => {
-    res.sendFile(path.resolve(process.cwd(), 'dist/clients-lib/bundles/clients-lib.umd.js'));
-});
+app.use('/dist', express.static(path.resolve(process.cwd(), 'dist/main.js')));
+// app.get('/clients', (req, res) => {
+//     res.sendFile(path.resolve(process.cwd(), 'dist/main.js'));
+// });
 
 // console.log(process.cwd())
 // const indexHtml = readFileSync(process.cwd() + '/dist/index.html', 'utf-8').toString();
@@ -36,7 +36,7 @@ app.route('*').get((req, res) => {
 
     console.log("******* request *******")
 
-    res.sendFile(path.resolve(process.cwd(), 'dist/clients-lib/bundles/clients-lib.umd.js'));
+    res.sendFile(path.resolve(process.cwd(), 'dist/main.js'));
 
     // renderModuleFactory(AppServerModuleNgFactory, {
     //     document: indexHtml,
